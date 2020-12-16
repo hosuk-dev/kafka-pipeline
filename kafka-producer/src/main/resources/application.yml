@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    include: kafka
+  kafka:
+    producer:
+      # 리더가 복제하는 팔로워까지 완료된 경우 ack를 받음
+      acks: all
+      # 재전송 횟수
+      retries: 3

@@ -1,0 +1,4 @@
+rootProject.name = 'kafka-pipeline'
+include 'kafka-common'
+include 'kafka-producer'
+include 'kafka-consumer'

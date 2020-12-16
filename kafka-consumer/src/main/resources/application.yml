@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    include: kafka
+  kafka:
+    consumer:
+      group-id: daemon-consumer

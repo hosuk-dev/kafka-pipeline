@@ -1,0 +1,12 @@
+# kafka server info
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+
+#send topic info
+send:
+  topic-name: send-history-topic
+
+#exchange topic info
+exchange:
+  topic-name: exchange-history-topic

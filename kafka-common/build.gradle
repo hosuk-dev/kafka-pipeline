@@ -1,0 +1,9 @@
+bootJar.enabled=false
+jar.enabled=true
+
+dependencies {
+    compile 'org.springframework.kafka:spring-kafka'
+    compile 'org.springframework.kafka:spring-kafka-test'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.12.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.0'
+}
