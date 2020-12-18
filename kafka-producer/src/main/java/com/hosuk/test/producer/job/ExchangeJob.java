@@ -22,7 +22,10 @@ public class ExchangeJob {
     private final KafkaTemplate<String, ExchangeDto> exchangeJobKafkaTemplate;
     private final Environment env;
 
-    //@Scheduled(fixedDelay = 1000)
+    /**
+     * 교환결과를 exchange 토픽에 저장한다.
+     */
+    @Scheduled(fixedDelay = 1000)
     public void run () {
         String cpnNo = RandomStringUtils.randomAlphanumeric(8);
         ExchangeDto exchangeDto = ExchangeDto.registExchange(cpnNo, "S", LocalDateTime.now(), "교환정보");
@@ -39,7 +42,7 @@ public class ExchangeJob {
      * @param sendResult
      */
     private void sendOnSuccess(SendResult<String, ExchangeDto> sendResult) {
-       // log.info(sendResult.toString());
+       log.info(sendResult.toString());
 
     }
 

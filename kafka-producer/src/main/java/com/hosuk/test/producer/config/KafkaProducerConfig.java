@@ -1,6 +1,5 @@
 package com.hosuk.test.producer.config;
 
-import com.fasterxml.jackson.databind.JsonSerializable;
 import com.hosuk.test.common.dto.ExchangeDto;
 import com.hosuk.test.common.dto.SendDto;
 import lombok.RequiredArgsConstructor;

@@ -22,6 +22,9 @@ public class SendJob {
     private final KafkaTemplate<String, SendDto> sendDtoKafkaTemplate;
     private final Environment env;
 
+    /**
+     * 발송결과를 kafka send topic에 저장한다
+     */
     @Scheduled(fixedDelay = 1000)
     public void run() {
         String cpnNo = RandomStringUtils.randomAlphanumeric(8);
@@ -32,7 +35,6 @@ public class SendJob {
 
         future.addCallback((success) -> sendOnSuccess(success), (failure) -> sendOnFail(failure));
 
-        log.info(sendDto.toString());
     }
 
     /**

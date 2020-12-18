@@ -26,6 +26,12 @@ public class TopicConfig {
     }
 
 
+    /**
+     * send topic 생성
+     * (topic이 생성되지 않았을때에만 생성됨)
+     *
+     * @return
+     */
     @Bean
     public NewTopic sendTopic() {
         return TopicBuilder.name(environment.getProperty("send.topic-name"))
@@ -34,6 +40,12 @@ public class TopicConfig {
                 .build();
     }
 
+    /**
+     * exchange topic 생성
+     * (topic이 생성되지 않았을때에만 생성됨)
+     *
+     * @return
+     */
     @Bean
     public NewTopic exchangeTopic() {
         return TopicBuilder.name(environment.getProperty("exchange.topic-name"))
@@ -41,8 +53,4 @@ public class TopicConfig {
                 .replicas(3)
                 .build();
     }
-
-
-
-
 }
