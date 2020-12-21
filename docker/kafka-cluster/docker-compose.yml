@@ -162,24 +162,6 @@ services:
       - kafka3
       - kafka-rest-proxy
 
-  # ksql 서버
-  ksqldb-server:
-    image: confluentinc/cp-ksqldb-server:5.5.1
-    hostname: ksqldb-server
-    ports:
-      - "8088:8088"
-    environment:
-      KSQL_BOOTSTRAP_SERVERS: PLAINTEXT://kafka1:19092
-      KSQL_LISTENERS: http://0.0.0.0:8088/
-      KSQL_KSQL_SERVICE_ID: ksqldb-server_
-    depends_on:
-      - zoo1
-      - zoo2
-      - zoo3
-      - kafka1
-      - kafka2
-      - kafka3
-
   # 주키퍼 네비게이터(주키퍼 관리자)
   zoonavigator:
     image: elkozmon/zoonavigator:0.8.0

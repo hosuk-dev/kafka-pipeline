@@ -3,4 +3,7 @@ spring:
     include: kafka
   kafka:
     consumer:
+      # Consumer Group id 설정
       group-id: daemon-consumer
+      # Consumer Group에 저장된 offset번호가 없을경우(최초 구동) 해당 토픽의 파티션 제일 앞 offset부터 데이터를 받아온
+      auto-offset-reset: earliest
